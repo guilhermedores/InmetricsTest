@@ -1,0 +1,45 @@
+networks:
+    my-infocentre-network:
+        driver: 'bridge'
+        
+services:
+
+  nginx:
+    container_name: Nginx
+    build: ./Nginx
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      - NGINX_PORT=80
+      - NGINX_HOST=localhost
+    networks:
+      - my-infocentre-network
+      
+  report-service:
+    container_name: ReportService
+    build: ./ReportService
+    ports:
+      - 5002:5002
+    environment:
+      - ASPNETCORE_HTTP_PORTS=5002
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - nginx
+    networks:
+      - my-infocentre-network
+  
+  transaction-service:
+    container_name: TransactionService
+    build: ./TransactionService
+    ports:
+      - 5001:5001
+    environment:
+      - ASPNETCORE_HTTP_PORTS=5001
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - nginx
+    networks:
+      - my-infocentre-network
+  
+  
