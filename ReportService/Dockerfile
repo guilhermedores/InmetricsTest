@@ -11,7 +11,7 @@ RUN dotnet publish ./ReportService.Api/ReportService.Api.csproj -c Release -o ou
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 
-EXPOSE 5001
+EXPOSE 5002
 
 WORKDIR /App
 COPY --from=build-env /App/out .
