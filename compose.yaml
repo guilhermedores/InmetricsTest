@@ -4,39 +4,39 @@ networks:
         
 services:
 
-  #nginx:
-  #  container_name: nginx
-  #  build: ./Nginx
-  #  restart: always
-  #  ports:
-  #    - 80:80
-  #  environment:
-  #    - NGINX_PORT=80
-  #    - NGINX_HOST=localhost
-  #  networks:
-  #    - my-network
-  #
-  #transaction-service:
-  #  container_name: transaction-service
-  #  build: ./TransactionService
-  #  ports:
-  #    - 5001:5001
-  #  environment:
-  #    - ASPNETCORE_HTTP_PORTS=5001
-  #    - ASPNETCORE_ENVIRONMENT=Development
-  #  networks:
-  #    - my-network
-  #    
-  #report-service:
-  #  container_name: report-service
-  #  build: ./ReportService
-  #  ports:
-  #    - 5002:5002
-  #  environment:
-  #    - ASPNETCORE_HTTP_PORTS=5002
-  #    - ASPNETCORE_ENVIRONMENT=Development
-  #  networks:
-  #    - my-network
+  nginx:
+    container_name: nginx
+    build: ./Nginx
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      - NGINX_PORT=80
+      - NGINX_HOST=localhost
+    networks:
+      - my-network
+  
+  transaction-service:
+    container_name: transaction-service
+    build: ./TransactionService
+    ports:
+      - 5001:5001
+    environment:
+      - ASPNETCORE_HTTP_PORTS=5001
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - my-network
+      
+  report-service:
+    container_name: report-service
+    build: ./ReportService
+    ports:
+      - 5002:5002
+    environment:
+      - ASPNETCORE_HTTP_PORTS=5002
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - my-network
       
   rabbitmq:
     image: rabbitmq:3-management-alpine
