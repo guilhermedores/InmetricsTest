@@ -19,10 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportService.Domain", "Rep
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportService.Infra", "ReportService\ReportService.Infra\ReportService.Infra.csproj", "{13DF314B-CF9D-4023-896A-FC456ACA92B8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedLib", "SharedLib", "{3F32154A-125F-4394-94B2-F91E3E862B83}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareLib", "ShareLib\ShareLib.csproj", "{3A09F2A3-3D1B-4F59-AA37-D611B81A7C3B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,10 +49,6 @@ Global
 		{13DF314B-CF9D-4023-896A-FC456ACA92B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13DF314B-CF9D-4023-896A-FC456ACA92B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13DF314B-CF9D-4023-896A-FC456ACA92B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A09F2A3-3D1B-4F59-AA37-D611B81A7C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A09F2A3-3D1B-4F59-AA37-D611B81A7C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A09F2A3-3D1B-4F59-AA37-D611B81A7C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A09F2A3-3D1B-4F59-AA37-D611B81A7C3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,7 +60,6 @@ Global
 		{CC812929-3FA7-4870-8220-0BADFD375FE1} = {A8ECBE0F-BC41-4C03-AF03-853F7288BE4E}
 		{6AB5AAA1-03D5-4DBA-8400-A763818E2E22} = {A8ECBE0F-BC41-4C03-AF03-853F7288BE4E}
 		{13DF314B-CF9D-4023-896A-FC456ACA92B8} = {A8ECBE0F-BC41-4C03-AF03-853F7288BE4E}
-		{3A09F2A3-3D1B-4F59-AA37-D611B81A7C3B} = {3F32154A-125F-4394-94B2-F91E3E862B83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77945708-F2FD-47C0-9EE7-2CDE8EC5A3B3}

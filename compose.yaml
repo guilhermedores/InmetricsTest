@@ -15,28 +15,6 @@ services:
       - NGINX_HOST=localhost
     networks:
       - my-network
-  
-  transaction-service:
-    container_name: transaction-service
-    build: ./TransactionService
-    ports:
-      - 5001:5001
-    environment:
-      - ASPNETCORE_HTTP_PORTS=5001
-      - ASPNETCORE_ENVIRONMENT=Development
-    networks:
-      - my-network
-      
-  report-service:
-    container_name: report-service
-    build: ./ReportService
-    ports:
-      - 5002:5002
-    environment:
-      - ASPNETCORE_HTTP_PORTS=5002
-      - ASPNETCORE_ENVIRONMENT=Development
-    networks:
-      - my-network
       
   rabbitmq:
     image: rabbitmq:3-management-alpine
@@ -49,3 +27,33 @@ services:
       - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
     networks:
       - my-network
+  
+  transaction-service:
+    container_name: transaction-service
+    build: ./TransactionService
+    ports:
+      - 5001:5001
+    environment:
+      - ASPNETCORE_HTTP_PORTS=5001
+      - ASPNETCORE_ENVIRONMENT=Development      
+    depends_on:
+      - nginx
+      - rabbitmq
+    networks:
+      - my-network
+      
+  report-service:
+    container_name: report-service
+    build: ./ReportService
+    ports:
+      - 5002:5002
+    environment:
+      - ASPNETCORE_HTTP_PORTS=5002
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - nginx
+      - rabbitmq
+    networks:
+      - my-network
+      
+  

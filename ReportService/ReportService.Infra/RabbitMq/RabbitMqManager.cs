@@ -20,7 +20,7 @@ public class RabbitMqManager : BackgroundService
     {
         _serviceProvider = serviceProvider;
 
-        var factory = new ConnectionFactory { HostName = "localhost" };
+        var factory = new ConnectionFactory { HostName = "rabbitmq" };
         _connection = factory.CreateConnection();
         _channel = _connection.CreateModel();
         _queueName = _channel.QueueDeclare().QueueName;
