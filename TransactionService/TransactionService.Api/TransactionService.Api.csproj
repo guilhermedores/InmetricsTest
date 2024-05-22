@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TransactionService.Application\TransactionService.Application.csproj" />
+    <ProjectReference Include="..\..\ShareLib\ShareLib.csproj" />
+    <ProjectReference Include="..\TransactionService.Domain\TransactionService.Domain.csproj" />
+    <ProjectReference Include="..\TransactionService.Infra\TransactionService.Infra.csproj" />
   </ItemGroup>
 
 </Project>
