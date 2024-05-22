@@ -1,5 +1,8 @@
 Sistema desenvolvido para o Teste da INMetrics
 
+![InMetrics drawio](https://github.com/guilhermedores/InmetricsTest/assets/5339903/371a396d-ffab-475b-88d0-48f117dde139)
+
+
 Para rodar o sistema basta clonar o projeto e rodar o comando 
 
 ```
